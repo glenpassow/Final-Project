@@ -3,7 +3,9 @@ print("prepare to lose")
 
 from ggame import App, RectangleAsset, ImageAsset, Sprite, LineStyle, Color, Frame
 
+rectangle = RectangleAsset(20, 20, thinline, green)
 blue = Color(0x2D9FC2,1.0)
+thinline = LineStyle(1, black)
 
 class cell(Sprite):
     def __init__(self, asset, position):
@@ -21,9 +23,13 @@ class Battleship(App):
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT)
         ConwayGame.listenMouseEvent("click",self.breathlife)
         
-        
+    for x in range(0, height):
+        for y in range(0, width):
+            Sprite(rectangle2, (x*height, y*width))
+            squares[(x,y)] = cell(rectangle, (x*height, y*width))      
 
-
+myapp = Battleship()
+myapp.run()
 
 """
 from ggame import App, RectangleAsset, ImageAsset, Sprite, LineStyle, Color, Frame
