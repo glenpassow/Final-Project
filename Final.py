@@ -22,7 +22,7 @@ class cell(Sprite):
 class Battleship(App):
     
     def __init__(self):
-        Battleship.listenKeyEvent("keydown", "space", self.spaceclick)
+        #Battleship.listenKeyEvent("keydown", "space", self.spaceclick)
         SCREEN_WIDTH = 1000
         SCREEN_HEIGHT = 1000
         self.going = False
