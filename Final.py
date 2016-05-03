@@ -4,10 +4,11 @@ blue = Color(0x2D9FC2,1.0)
 green = Color(0x00ff00, 1.0)
 orange = Color(0xFF8400,1.0)
 thinline = LineStyle(1, black)
-rectangle = RectangleAsset(20, 20, thinline, green)
-rectangle2 = RectangleAsset(20, 20, thinline, orange)
+celld = 35
+rectangle = RectangleAsset(celld, celld, thinline, green)
+rectangle2 = RectangleAsset(celld, celld, thinline, blue)
+rectangle3 = RectangleAsset(celld, celld, thinline, black)
 squares = {}
-celld = 20
 
 height = 10
 width = 10
