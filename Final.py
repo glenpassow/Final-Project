@@ -1,14 +1,14 @@
 from ggame import App, RectangleAsset, ImageAsset, Sprite, LineStyle, Color, Frame
 black = Color(0x000000, 1.0)
 blue = Color(0x2D9FC2,1.0)
-green = Color(0x00ff00, 1.0)
+white = Color(0xFFFFFF, 1.0)
 orange = Color(0xFF8400,1.0)
 thinline = LineStyle(1, black)
 celld = 35
-rectangle = RectangleAsset(celld, celld, thinline, green)
+rectangle = RectangleAsset(celld, celld, thinline, white)
 rectangle2 = RectangleAsset(celld, celld, thinline, blue)
 rectangle3 = RectangleAsset(celld, celld, thinline, black)
-squares = {}
+ocean = {}
 
 height = 10
 width = 10
@@ -22,22 +22,27 @@ class cell(Sprite):
 class Battleship(App):
     
     def __init__(self):
-        #ConwayGame.listenKeyEvent("keydown", "space", self.spaceclick)
+        Battleship.listenKeyEvent("keydown", "space", self.spaceclick)
         SCREEN_WIDTH = 1000
         SCREEN_HEIGHT = 1000
         self.going = False
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT)
-        #ConwayGame.listenMouseEvent("click",self.breathlife)
+        Battleship.listenMouseEvent("click",self.breathlife)
+    
+    def breathlife(self, event):
+        self.cx = int(event.x/20)
+        self.cy = int(event.y/20)
+        ocean[(self.cx, self.cy)].visible = not ocean[(self.cx, self.cy)].visible
         
     for x in range(0, height):
         for y in range(0, width):
             Sprite(rectangle2, (x*celld, y*celld))
-            squares[(x,y)] = cell(rectangle, (x*celld, y*celld))
+            ocean[(x,y)] = cell(rectangle, (x*celld, y*celld))
             
     for x in range(0, height):
         for y in range(0, width):
             Sprite(rectangle2, (x*celld, y*celld + height*celld + 20))
-            squares[(x,y)] = cell(rectangle, (x*celld, y*celld))
+            ocean[(x,y)] = cell(rectangle, (x*celld, y*celld))
 
 myapp = Battleship()
 myapp.run()
@@ -53,7 +58,7 @@ a = 0
 b = 0
 height = 20
 width = 20
-squares = {}
+ocean = {}
 thinline = LineStyle(1, black)
 rectangle = RectangleAsset(20, 20, thinline, green)
 rectangle2 = RectangleAsset(20, 20, thinline, orange)
@@ -67,7 +72,7 @@ class cell(Sprite):
 for x in range(0, height):
             for y in range(0, width):
                 Sprite(rectangle2, (x*height, y*width))
-                squares[(x,y)] = cell(rectangle, (x*height, y*width))
+                ocean[(x,y)] = cell(rectangle, (x*height, y*width))
           
 class ConwayGame(App):
     
@@ -82,7 +87,7 @@ class ConwayGame(App):
     def breathlife(self, event):
         self.cx = int(event.x/20)
         self.cy = int(event.y/20)
-        squares[(self.cx, self.cy)].visible = not squares[(self.cx, self.cy)].visible
+        ocean[(self.cx, self.cy)].visible = not ocean[(self.cx, self.cy)].visible
     
     def spaceclick(self,event):
         self.going = not self.going
@@ -91,22 +96,22 @@ class ConwayGame(App):
         if self.going == True:
             for g in range(0, height):
                 for f in range(0, width):
-                    if squares[(g,f)].visible == True:
-                                squares[(g,f)].sca = squares[(g,f)].sca - 1
+                    if ocean[(g,f)].visible == True:
+                                ocean[(g,f)].sca = ocean[(g,f)].sca - 1
                     for w in range(-1, 2):
                         for h in range(-1, 2):
-                            if (w+g, h+f) in squares and squares[(w+g, h+f)].visible == True:
-                                squares[(g,f)].sca = squares[(g,f)].sca + 1
+                            if (w+g, h+f) in ocean and ocean[(w+g, h+f)].visible == True:
+                                ocean[(g,f)].sca = ocean[(g,f)].sca + 1
             
             for s in range(0, height):
                 for d in range(0, width):
-                    if squares[(s, d)].visible == True and squares[(s, d)].sca < 2:
-                        squares[(s, d)].visible = False
-                    elif squares[(s, d)].visible == True and squares[(s, d)].sca > 3:
-                        squares[(s, d)].visible = False
-                    elif squares[(s, d)].visible == False and squares[(s, d)].sca == 3:
-                        squares[(s, d)].visible = True
-                    squares[(s,d)].sca = 0
+                    if ocean[(s, d)].visible == True and ocean[(s, d)].sca < 2:
+                        ocean[(s, d)].visible = False
+                    elif ocean[(s, d)].visible == True and ocean[(s, d)].sca > 3:
+                        ocean[(s, d)].visible = False
+                    elif ocean[(s, d)].visible == False and ocean[(s, d)].sca == 3:
+                        ocean[(s, d)].visible = True
+                    ocean[(s,d)].sca = 0
 myapp = ConwayGame()
 myapp.run()
 """
