@@ -1,6 +1,3 @@
-print("Yall dis is conyayz game o battleship")
-print("prepare to lose")
-
 from ggame import App, RectangleAsset, ImageAsset, Sprite, LineStyle, Color, Frame
 black = Color(0x000000, 1.0)
 blue = Color(0x2D9FC2,1.0)
@@ -10,9 +7,10 @@ thinline = LineStyle(1, black)
 rectangle = RectangleAsset(20, 20, thinline, green)
 rectangle2 = RectangleAsset(20, 20, thinline, orange)
 squares = {}
+celld = 20
 
-height = 20
-width = 20
+height = 10
+width = 10
 
 class cell(Sprite):
     def __init__(self, asset, position):
@@ -23,7 +21,7 @@ class cell(Sprite):
 class Battleship(App):
     
     def __init__(self):
-        ConwayGame.listenKeyEvent("keydown", "space", self.spaceclick)
+        #ConwayGame.listenKeyEvent("keydown", "space", self.spaceclick)
         SCREEN_WIDTH = 1000
         SCREEN_HEIGHT = 1000
         self.going = False
@@ -32,8 +30,13 @@ class Battleship(App):
         
     for x in range(0, height):
         for y in range(0, width):
-            Sprite(rectangle2, (x*height, y*width))
-            squares[(x,y)] = cell(rectangle, (x*height, y*width))      
+            Sprite(rectangle2, (x*celld, y*celld))
+            squares[(x,y)] = cell(rectangle, (x*celld, y*celld))
+            
+    for x in range(0, height):
+        for y in range(0, width):
+            Sprite(rectangle2, (x*celld, y*celld + height*celld + 20))
+            squares[(x,y)] = cell(rectangle, (x*celld, y*celld))
 
 myapp = Battleship()
 myapp.run()
