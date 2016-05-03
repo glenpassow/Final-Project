@@ -5,9 +5,11 @@ from ggame import App, RectangleAsset, ImageAsset, Sprite, LineStyle, Color, Fra
 black = Color(0x000000, 1.0)
 blue = Color(0x2D9FC2,1.0)
 green = Color(0x00ff00, 1.0)
+orange = Color(0xFF8400,1.0)
 thinline = LineStyle(1, black)
 rectangle = RectangleAsset(20, 20, thinline, green)
 rectangle2 = RectangleAsset(20, 20, thinline, orange)
+squares = {}
 
 height = 20
 width = 20
@@ -26,7 +28,7 @@ class Battleship(App):
         SCREEN_HEIGHT = 1000
         self.going = False
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT)
-        ConwayGame.listenMouseEvent("click",self.breathlife)
+        #ConwayGame.listenMouseEvent("click",self.breathlife)
         
     for x in range(0, height):
         for y in range(0, width):
