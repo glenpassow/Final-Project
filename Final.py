@@ -2,10 +2,15 @@ print("Yall dis is conyayz game o battleship")
 print("prepare to lose")
 
 from ggame import App, RectangleAsset, ImageAsset, Sprite, LineStyle, Color, Frame
-
-rectangle = RectangleAsset(20, 20, thinline, green)
+black = Color(0x000000, 1.0)
 blue = Color(0x2D9FC2,1.0)
+green = Color(0x00ff00, 1.0)
 thinline = LineStyle(1, black)
+rectangle = RectangleAsset(20, 20, thinline, green)
+rectangle2 = RectangleAsset(20, 20, thinline, orange)
+
+height = 20
+width = 20
 
 class cell(Sprite):
     def __init__(self, asset, position):
