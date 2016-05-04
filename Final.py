@@ -2,13 +2,17 @@ from ggame import App, RectangleAsset, ImageAsset, Sprite, LineStyle, Color, Fra
 black = Color(0x000000, 1.0)
 blue = Color(0x2D9FC2,1.0)
 white = Color(0xFFFFFF, 1.0)
-orange = Color(0xFF8400,1.0)
+red = Color(0xFC5D5D,1.0)
 thinline = LineStyle(1, black)
 celld = 35
 rectangle = RectangleAsset(celld, celld, thinline, white)
 rectangle2 = RectangleAsset(celld, celld, thinline, blue)
-rectangle3 = RectangleAsset(celld, celld, thinline, black)
+rectangle3 = RectangleAsset(celld, celld, thinline, red)
+rectangle4 = RectangleAsset(celld, celld, thinline, black)
 ocean = {}
+oceanself = {}
+enemyBoats = {}
+selfBoats = {}
 
 height = 10
 width = 10
@@ -36,14 +40,14 @@ class Battleship(App):
         
     for x in range(0, height):
         for y in range(0, width):
+            #screen one set up
             Sprite(rectangle2, (x*celld, y*celld))
             ocean[(x,y)] = cell(rectangle, (x*celld, y*celld))
-            
-    for x in range(0, height):
-        for y in range(0, width):
+            enemyBoats[(x,y)] = cell(rectangle4, (x*celld, y*celld))
+            #screen two ser up
             Sprite(rectangle2, (x*celld, y*celld + height*celld + 20))
-            ocean[(x,y)] = cell(rectangle, (x*celld, y*celld))
-
+            oceanself[(x,y)] = cell(rectangle, (x*celld, y*celld))
+            selfBoats[(x,y)] = cell(rectangle3, (x*celld, y*celld))
 myapp = Battleship()
 myapp.run()
 
