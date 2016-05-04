@@ -30,8 +30,8 @@ class Battleship(App):
         Battleship.listenMouseEvent("click",self.breathlife)
     
     def breathlife(self, event):
-        self.cx = int(event.x/20)
-        self.cy = int(event.y/20)
+        self.cx = int(event.x/celld)
+        self.cy = int(event.y/celld)
         ocean[(self.cx, self.cy)].visible = not ocean[(self.cx, self.cy)].visible
         
     for x in range(0, height):
