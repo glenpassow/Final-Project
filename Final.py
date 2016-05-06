@@ -5,9 +5,9 @@ white = Color(0xFFFFFF, 1.0)
 red = Color(0xFC5D5D,1.0)
 thinline = LineStyle(1, black)
 celld = 35
+rectangle3 = RectangleAsset(celld, celld, thinline, red)
 rectangle = RectangleAsset(celld, celld, thinline, white)
 rectangle2 = RectangleAsset(celld, celld, thinline, blue)
-rectangle3 = RectangleAsset(celld, celld, thinline, red)
 rectangle4 = RectangleAsset(celld, celld, thinline, black)
 ocean = {}
 oceanself = {}
@@ -41,9 +41,9 @@ class Battleship(App):
     for x in range(0, height):
         for y in range(0, width):
             #screen one set up
-            Sprite(rectangle2, (x*celld, y*celld))
+            enemyBoats[(x,y)] = cell(rectangle3, (x*celld, y*celld))
             ocean[(x,y)] = cell(rectangle, (x*celld, y*celld))
-            enemyBoats[(x,y)] = cell(rectangle4, (x*celld, y*celld))
+            Sprite(rectangle2, (x*celld, y*celld))
             #screen two ser up
             Sprite(rectangle2, (x*celld, y*celld + height*celld + 20))
             oceanself[(x,y)] = cell(rectangle, (x*celld, y*celld))
