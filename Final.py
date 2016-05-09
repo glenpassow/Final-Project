@@ -1,4 +1,5 @@
 from ggame import App, RectangleAsset, ImageAsset, Sprite, LineStyle, Color, Frame
+from random import randrange
 black = Color(0x000000, 1.0)
 blue = Color(0x2D9FC2,1.0)
 white = Color(0xFFFFFF, 1.0)
@@ -13,7 +14,7 @@ ocean = {}
 oceanself = {}
 enemyBoats = {}
 selfBoats = {}
-
+length = 5
 height = 10
 width = 10
 
@@ -48,6 +49,16 @@ class Battleship(App):
             Sprite(rectangle2, (x*celld, y*celld + height*celld + 20))
             oceanself[(x,y)] = cell(rectangle, (x*celld, y*celld))
             selfBoats[(x,y)] = cell(rectangle3, (x*celld, y*celld))
+    
+    for a in range(0, 4):
+        c = randrange(0, 10)
+        d = randrange(0, 10)
+        for range(0, length):
+            enemyBoats[(c,d)].visible = True
+            c = c+1
+            d = d+1
+            length = length - 1
+            
 myapp = Battleship()
 myapp.run()
 
