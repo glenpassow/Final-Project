@@ -44,7 +44,7 @@ class Battleship(App):
             enemyBoats[(x,y)] = cell(rectangle3, (x*celld, y*celld))
             Sprite(rectangle2, (x*celld, y*celld))
             ocean[(x,y)] = cell(rectangle, (x*celld, y*celld))
-            #screen two ser up
+            #screen two set up
             Sprite(rectangle2, (x*celld, y*celld + height*celld + 20))
             oceanself[(x,y)] = cell(rectangle, (x*celld, y*celld))
             selfBoats[(x,y)] = cell(rectangle3, (x*celld, y*celld))
