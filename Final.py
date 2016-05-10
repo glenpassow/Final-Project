@@ -24,6 +24,31 @@ class cell(Sprite):
         self.visible = False
         self.sca = 0
 
+
+for x in range(0, height):
+    for y in range(0, width):
+        #screen one set up
+        enemyBoats[(x,y)] = cell(rectangle3, (x*celld, y*celld))
+        Sprite(rectangle2, (x*celld, y*celld))
+        ocean[(x,y)] = cell(rectangle, (x*celld, y*celld))
+        #screen two set up
+        Sprite(rectangle2, (x*celld, y*celld + height*celld + 20))
+        oceanself[(x,y)] = cell(rectangle, (x*celld, y*celld))
+        selfBoats[(x,y)] = cell(rectangle3, (x*celld, y*celld))
+
+for a in range(0, 4):
+    c = randrange(0, 10)
+    d = randrange(0, 10)
+    """
+    for range(0, length):
+        enemyBoats[(c,d)].visible = True
+        c = c+1
+        d = d+1
+    """
+    length = length - 1
+
+
+
 class Battleship(App):
     
     def __init__(self):
@@ -38,26 +63,6 @@ class Battleship(App):
         self.cx = int(event.x/celld)
         self.cy = int(event.y/celld)
         ocean[(self.cx, self.cy)].visible = not ocean[(self.cx, self.cy)].visible
-        
-    for x in range(0, height):
-        for y in range(0, width):
-            #screen one set up
-            enemyBoats[(x,y)] = cell(rectangle3, (x*celld, y*celld))
-            Sprite(rectangle2, (x*celld, y*celld))
-            ocean[(x,y)] = cell(rectangle, (x*celld, y*celld))
-            #screen two set up
-            Sprite(rectangle2, (x*celld, y*celld + height*celld + 20))
-            oceanself[(x,y)] = cell(rectangle, (x*celld, y*celld))
-            selfBoats[(x,y)] = cell(rectangle3, (x*celld, y*celld))
-    
-    for a in range(0, 4):
-        c = randrange(0, 10)
-        d = randrange(0, 10)
-        for range(0, length):
-            enemyBoats[(c,d)].visible = True
-            c = c+1
-            d = d+1
-            length = length - 1
             
 myapp = Battleship()
 myapp.run()
