@@ -35,10 +35,14 @@ for x in range(0, height):
         Sprite(rectangle2, (x*celld, y*celld + height*celld + 20))
         oceanself[(x,y)] = cell(rectangle, (x*celld, y*celld))
         selfBoats[(x,y)] = cell(rectangle3, (x*celld, y*celld))
+        
+print(enemyBoats)
 
 for a in range(0, 4):
     c = randrange(1, 10)
     d = randrange(1, 10)
+    print(c)
+    print(d)
     for u in range(0, length):
         enemyBoats[(c,d)].visible = not enemyBoats[(c,d)].visible
         c = c+1
