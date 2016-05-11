@@ -40,7 +40,7 @@ for a in range(0, 4):
     c = randrange(1, 10)
     d = randrange(1, 10)
     for u in range(0, length):
-        enemyBoats[(c,d)].visible = True
+        enemyBoats[(c,d)].visible = not enemyBoats[(c,d)].visible
         c = c+1
         d = d+1
     length = length - 1
