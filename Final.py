@@ -21,15 +21,15 @@ width = 10
 class cell(Sprite):
     def __init__(self, asset, position):
         super().__init__(asset, position)
-        self.visible = False
+        self.visible = True
         self.sca = 0
 
 
 for x in range(0, height):
     for y in range(0, width):
         #screen one set up
-        enemyBoats[(x,y)] = cell(rectangle3, (x*celld, y*celld))
         Sprite(rectangle2, (x*celld, y*celld))
+        enemyBoats[(x,y)] = cell(rectangle3, (x*celld, y*celld))
         ocean[(x,y)] = cell(rectangle, (x*celld, y*celld))
         #screen two set up
         Sprite(rectangle2, (x*celld, y*celld + height*celld + 20))
@@ -39,14 +39,13 @@ for x in range(0, height):
 print(enemyBoats)
 
 for a in range(0, 4):
-    c = randrange(1, 10)
-    d = randrange(1, 10)
-    print(c)
-    print(d)
-    for u in range(0, length):
-        enemyBoats[(c,d)].visible = not enemyBoats[(c,d)].visible
-        c = c+1
-        d = d+1
+    randx = randrange(1, 10)
+    randy = randrange(1, 10)
+    #for u in range(0, length+1):
+    for u in range(0, 1):
+        enemyBoats[(randx,randy)].visible = not enemyBoats[(randx,randy)].visible
+        randx = randx + 1
+        randy = randy + 1
     length = length - 1
 
 class Battleship(App):
