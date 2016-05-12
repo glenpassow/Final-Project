@@ -33,8 +33,8 @@ for x in range(0, height):
     for y in range(0, width):
         #screen one set up
         Sprite(rectangle2, (x*celld, y*celld))
-        enemyBoats[(x,y)] = enemyships(rectangle3, (x*celld, y*celld))
         ocean[(x,y)] = cell(rectangle, (x*celld, y*celld))
+        enemyBoats[(x,y)] = enemyships(rectangle3, (x*celld, y*celld))
         #screen two set up
         Sprite(rectangle2, (x*celld, y*celld + height*celld + 20))
         oceanself[(x,y)] = cell(rectangle, (x*celld, y*celld))
@@ -47,7 +47,7 @@ for a in range(0, 4):
     randy = randrange(1, 10)
     #for u in range(0, length+1):
     for u in range(0, 1):
-        enemyBoats[(randx,randy)].visible = not enemyBoats[(randx,randy)].visible
+        enemyBoats[(randx,randy)].visible = True
         randx = randx + 1
         randy = randy + 1
     length = length - 1
