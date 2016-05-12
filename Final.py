@@ -21,7 +21,7 @@ width = 10
 class cell(Sprite):
     def __init__(self, asset, position):
         super().__init__(asset, position)
-        self.visible = True
+        self.visible = False
         
 class enemyships(Sprite):
     def __init__(self, asset, position):
@@ -33,8 +33,8 @@ for x in range(0, height):
     for y in range(0, width):
         #screen one set up
         Sprite(rectangle2, (x*celld, y*celld))
-        ocean[(x,y)] = cell(rectangle, (x*celld, y*celld))
         enemyBoats[(x,y)] = enemyships(rectangle3, (x*celld, y*celld))
+        ocean[(x,y)] = cell(rectangle, (x*celld, y*celld))
         #screen two set up
         Sprite(rectangle2, (x*celld, y*celld + height*celld + 20))
         oceanself[(x,y)] = cell(rectangle, (x*celld, y*celld))
