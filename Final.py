@@ -21,7 +21,7 @@ width = 10
 class cell(Sprite):
     def __init__(self, asset, position):
         super().__init__(asset, position)
-        self.visible = True
+        self.visible = False
         
 class enemyships(Sprite):
     def __init__(self, asset, position):
@@ -45,7 +45,7 @@ for a in range(0, 4):
     randy = randrange(1, 10)
     #for u in range(0, length+1):
     for u in range(0, 1):
-        enemyBoats[(randx,randy)].visible = True
+        enemyBoats[(randx,randy)].visible = not enemyBoats[(randx,randy)].visible
         randx = randx + 1
         randy = randy + 1
     length = length - 1
