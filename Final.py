@@ -21,7 +21,7 @@ width = 10
 class cell(Sprite):
     def __init__(self, asset, position):
         super().__init__(asset, position)
-        self.visible = False
+        self.visible = True
         
 class enemyships(Sprite):
     def __init__(self, asset, position):
@@ -39,8 +39,6 @@ for x in range(0, height):
         Sprite(rectangle2, (x*celld, y*celld + height*celld + 20))
         oceanself[(x,y)] = cell(rectangle, (x*celld, y*celld))
         selfBoats[(x,y)] = cell(rectangle3, (x*celld, y*celld))
-        
-print(enemyBoats)
 
 for a in range(0, 4):
     randx = randrange(1, 10)
