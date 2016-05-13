@@ -44,9 +44,16 @@ for x in range(0, height):
 for a in range(0, 4):
     randx = randrange(1, 10)
     randy = randrange(1, 10)
-    #for u in range(0, length+1):
-    for u in range(0, 1):
-        enemyBoats[(randx,randy)].visible = not enemyBoats[(randx,randy)].visible
+    if randx > 5:
+        nsx = 1
+    else:
+        nsx = -1
+    if randy > 5:
+        nsy = 1
+    else:
+        nsy = -1    
+    for u in range(0, lenghth):
+        enemyBoats[(randx+nsx,randy+nsy)].visible = not enemyBoats[(randx+nsx,randy+nsy)].visible
         randx = randx + 1
         randy = randy + 1
     length = length - 1
