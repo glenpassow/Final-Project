@@ -21,7 +21,7 @@ width = 10
 class cell(Sprite):
     def __init__(self, asset, position):
         super().__init__(asset, position)
-        self.visible = False
+        self.visible = True
         
 class enemyships(Sprite):
     def __init__(self, asset, position):
@@ -71,7 +71,7 @@ class Battleship(App):
     def breathlife(self, event):
         self.cx = int(event.x/celld)
         self.cy = int(event.y/celld)
-        ocean[(self.cx, self.cy)].visible = not ocean[(self.cx, self.cy)].visible
+        ocean[(self.cx, self.cy)].visible = False
             
 myapp = Battleship()
 myapp.run()
