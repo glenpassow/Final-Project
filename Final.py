@@ -52,7 +52,7 @@ for a in range(0, 4):
         nsy = 1
     else:
         nsy = -1    
-    for u in range(0, lenghth):
+    for u in range(0, length):
         enemyBoats[(randx+nsx,randy+nsy)].visible = not enemyBoats[(randx+nsx,randy+nsy)].visible
         randx = randx + 1
         randy = randy + 1
