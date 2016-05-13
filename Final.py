@@ -14,7 +14,7 @@ ocean = {}
 oceanself = {}
 enemyBoats = {}
 selfBoats = {} 
-length = 5
+length = 3
 height = 10
 width = 10
 
@@ -45,15 +45,15 @@ for a in range(0, 4):
     randx = randrange(1, 10)
     randy = randrange(1, 10)
     if randx > 5:
-        nsx = 1
-    else:
         nsx = -1
-    if randy > 5:
-        nsy = 1
     else:
-        nsy = -1    
+        nsx = 1
+    if randy > 5:
+        nsy = -1
+    else:
+        nsy = 1    
     for u in range(0, length):
-        enemyBoats[(randx+nsx,randy+nsy)].visible = not enemyBoats[(randx+nsx,randy+nsy)].visible
+        enemyBoats[(randx+nsx,randy+nsy)].visible = True
         randx = randx + 1
         randy = randy + 1
     length = length - 1
