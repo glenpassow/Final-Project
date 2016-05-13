@@ -14,14 +14,14 @@ ocean = {}
 oceanself = {}
 enemyBoats = {}
 selfBoats = {} 
-length = 3
+length = 4
 height = 10
 width = 10
 
 class cell(Sprite):
     def __init__(self, asset, position):
         super().__init__(asset, position)
-        self.visible = True
+        self.visible = False
         
 class enemyships(Sprite):
     def __init__(self, asset, position):
@@ -52,7 +52,7 @@ for a in range(0, 4):
         nsy = -1
     else:
         nsy = 1    
-    for u in range(0, length):
+    for u in range(0, length-1):
         enemyBoats[(randx+nsx,randy+nsy)].visible = True
         randx = randx + 1
         randy = randy + 1
