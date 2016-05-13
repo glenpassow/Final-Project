@@ -13,7 +13,7 @@ rectangle4 = RectangleAsset(celld, celld, thinline, black)
 ocean = {}
 oceanself = {}
 enemyBoats = {}
-selfBoats = {}
+selfBoats = {} 
 length = 5
 height = 10
 width = 10
@@ -21,7 +21,7 @@ width = 10
 class cell(Sprite):
     def __init__(self, asset, position):
         super().__init__(asset, position)
-        self.visible = False
+        self.visible = True
         
 class enemyships(Sprite):
     def __init__(self, asset, position):
@@ -36,8 +36,9 @@ for x in range(0, height):
         enemyBoats[(x,y)] = enemyships(rectangle3, (x*celld, y*celld))
         ocean[(x,y)] = cell(rectangle, (x*celld, y*celld))
         #screen two set up
-        Sprite(rectangle2, (x*celld, y*celld + height*celld + 20))
-        oceanself[(x,y)] = cell(rectangle, (x*celld, y*celld))
+        yshift = height*celld + 20
+        Sprite(rectangle2, (x*celld, y*celld + yshift))
+        oceanself[(x,y)] = cell(rectangle, (x*celld, y*celld + yshift))
         selfBoats[(x,y)] = cell(rectangle3, (x*celld, y*celld))
 
 for a in range(0, 4):
