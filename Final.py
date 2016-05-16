@@ -52,10 +52,13 @@ for a in range(0, 4):
         nsy = -1
     else:
         nsy = 1    
+    randxy = randrange(1, 3)
     for u in range(0, length-1):
         enemyBoats[(randx+nsx,randy+nsy)].visible = True
-        randx = randx + 1
-        randy = randy + 1
+        if randxy == 2:
+            randx = randx + 1
+        else:
+            randy = randy + 1
     length = length - 1
 
 class Battleship(App):
