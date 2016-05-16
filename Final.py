@@ -56,7 +56,7 @@ for a in range(0, 3):
     randxy = randrange(1, 3)
     for u in range(0, length-1):
         enemyBoats[(randx+nsx,randy+nsy)].visible = True
-        enemyboatsalive
+        enemyboatsalive[(randx+nsx,randy+nsy)] = (randx+nsx,randy+nsy)
         if randxy == 2:
             randx = randx + 1
         else:
