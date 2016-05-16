@@ -15,14 +15,14 @@ oceanself = {}
 enemyBoats = {}
 selfBoats = {} 
 enemyboatsalive = {}
-length = 6
+length = 5
 height = 10
 width = 10
 
 class cell(Sprite):
     def __init__(self, asset, position):
         super().__init__(asset, position)
-        self.visible = True
+        self.visible = False
         
 class enemyships(Sprite):
     def __init__(self, asset, position):
@@ -42,7 +42,7 @@ for x in range(0, height):
         oceanself[(x,y)] = cell(rectangle, (x*celld, y*celld + yshift))
         #selfBoats[(x,y)] = cell(rectangle3, (x*celld, y*celld + yshift))
 
-for a in range(0, 4):
+for a in range(0, 3):
     randx = randrange(1, 10)
     randy = randrange(1, 10)
     if randx > 5:
