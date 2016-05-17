@@ -22,7 +22,7 @@ width = 10
 class cell(Sprite):
     def __init__(self, asset, position):
         super().__init__(asset, position)
-        self.visible = False
+        self.visible = True
         
 class enemyships(Sprite):
     def __init__(self, asset, position):
