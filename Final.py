@@ -77,8 +77,13 @@ class Battleship(App):
         self.cx = int(event.x/celld)
         self.cy = int(event.y/celld)
         ocean[(self.cx, self.cy)].visible = False
+        selfboats[(self.cx,self.cy)].visible = True
         enemyboatsalive[(self.cx, self.cy)] = [(1, 1)]
         print(enemyboatsalive)
+        print("")
+    
+    def step(self):
+        
             
 myapp = Battleship()
 myapp.run()
