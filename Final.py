@@ -22,7 +22,7 @@ width = 10
 class cell(Sprite):
     def __init__(self, asset, position):
         super().__init__(asset, position)
-        self.visible = True
+        self.visible = False
         
 class enemyships(Sprite):
     def __init__(self, asset, position):
@@ -77,6 +77,8 @@ class Battleship(App):
         self.cx = int(event.x/celld)
         self.cy = int(event.y/celld)
         ocean[(self.cx, self.cy)].visible = False
+        enemyboatsalive[(self.cx, self.cy)] = [(1, 1)]
+        print(enemyboatsalive)
             
 myapp = Battleship()
 myapp.run()
