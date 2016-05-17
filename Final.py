@@ -40,7 +40,7 @@ for x in range(0, height):
         yshift = height*celld + 20
         Sprite(rectangle2, (x*celld, y*celld + yshift))
         oceanself[(x,y)] = cell(rectangle, (x*celld, y*celld + yshift))
-        selfBoats[(x,y)] = cell(rectangle3, (x*celld, y*celld + yshift))
+        #selfBoats[(x,y)] = cell(rectangle3, (x*celld, y*celld + yshift))
 
 for a in range(0, 3):
     randx = randrange(1, 10)
@@ -77,12 +77,12 @@ class Battleship(App):
         self.cx = int(event.x/celld)
         self.cy = int(event.y/celld)
         ocean[(self.cx, self.cy)].visible = False
-        selfboats[(self.cx,self.cy)].visible = True
-        enemyboatsalive[(self.cx, self.cy)] = [(1, 1)]
+        #selfboats[(self.cx,self.cy)].visible = False
+        enemyboatsalive[(self.cx, self.cy)] = "hit"
         print(enemyboatsalive)
         print("")
     
-    #def step(self):
+    def step(self):
         
             
 myapp = Battleship()
