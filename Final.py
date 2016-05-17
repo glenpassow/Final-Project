@@ -84,7 +84,6 @@ class Battleship(App):
     
     def step(self):
         
-            
 myapp = Battleship()
 myapp.run()
 
