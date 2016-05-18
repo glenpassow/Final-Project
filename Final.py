@@ -82,7 +82,11 @@ class Battleship(App):
         print(enemyboatsalive)
         print("")
     
-    def step(self):
+    #def step(self):
+        squarestogo = len(enemyboatsalive)
+        print(squarestogo)
+        if squarestogo == 1:
+            print("you win")
         
 myapp = Battleship()
 myapp.run()
