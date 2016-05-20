@@ -79,6 +79,7 @@ class Battleship(App):
         ocean[(self.cx, self.cy)].visible = False
         #selfboats[(self.cx,self.cy)].visible = False
         enemyboatsalive[(self.cx, self.cy)] = "hit"
+        if enemyboats
         print(enemyboatsalive)
         print("")
     
