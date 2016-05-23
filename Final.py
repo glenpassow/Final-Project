@@ -81,7 +81,6 @@ class Battleship(App):
         #selfboats[(self.cx,self.cy)].visible = False
         if (self.cx, self.cy) in enemyboatsalive:
             self.squarehit = self.squarehit + 1
-        print(self.squarehit)
     
     def step(self):
         if self.squarehit == 9:
