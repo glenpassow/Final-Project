@@ -82,7 +82,7 @@ class Battleship(App):
         #selfboats[(self.cx,self.cy)].visible = False
         if (self.cx, self.cy) in enemyboatsalive:
             self.squarehit = self.squarehit + 1
-        nonalcoholicshotstaken = nonalcoholicshotstaken + 1
+        self.nonalcoholicshotstaken = self.nonalcoholicshotstaken + 1
         print(nonalcoholicshotstaken)
     
     def step(self):
