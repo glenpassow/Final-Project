@@ -83,7 +83,7 @@ class Battleship(App):
         if (self.cx, self.cy) in enemyboatsalive:
             self.squarehit = self.squarehit + 1
         self.nonalcoholicshotstaken = self.nonalcoholicshotstaken + 1
-        print(nonalcoholicshotstaken)
+        print(self.nonalcoholicshotstaken)
     
     def step(self):
         if self.squarehit == 9:
