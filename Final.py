@@ -18,6 +18,7 @@ enemyboatsalive = {}
 length = 5
 height = 10
 width = 10
+squarehit = 0
 
 class cell(Sprite):
     def __init__(self, asset, position):
@@ -78,15 +79,12 @@ class Battleship(App):
         self.cy = int(event.y/celld)
         ocean[(self.cx, self.cy)].visible = False
         #selfboats[(self.cx,self.cy)].visible = False
-        enemyboatsalive[(self.cx, self.cy)] = "hit"
-        if enemyboats
-        print(enemyboatsalive)
-        print("")
+        if (self.cx, self.cy) in enemyboatsalive:
+            squarehit = squarehit + 1
     
     def step(self):
-        squarestogo = len(enemyboatsalive)
-        print(squarestogo)
-        if squarestogo == 1:
+        print(squarehit)
+        if squarehit == 9:
             print("you win")
         
 myapp = Battleship()
