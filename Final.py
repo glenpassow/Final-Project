@@ -18,7 +18,6 @@ enemyboatsalive = {}
 length = 5
 height = 10
 width = 10
-squarehit = 0
 
 class cell(Sprite):
     def __init__(self, asset, position):
@@ -71,6 +70,7 @@ class Battleship(App):
         SCREEN_WIDTH = 1000
         SCREEN_HEIGHT = 1000
         self.going = False
+        self.squarehit = 0
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT)
         Battleship.listenMouseEvent("click",self.breathlife)
     
@@ -80,11 +80,11 @@ class Battleship(App):
         ocean[(self.cx, self.cy)].visible = False
         #selfboats[(self.cx,self.cy)].visible = False
         if (self.cx, self.cy) in enemyboatsalive:
-            squarehit = squarehit + 1
+            self.squarehit = self.squarehit + 1
     
     def step(self):
-        print(squarehit)
-        if squarehit == 9:
+        print(self.squarehit)
+        if self.squarehit == 9:
             print("you win")
         
 myapp = Battleship()
