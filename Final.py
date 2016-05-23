@@ -71,6 +71,7 @@ class Battleship(App):
         SCREEN_HEIGHT = 1000
         self.going = False
         self.squarehit = 0
+        self.nonalcoholicshotstaken = 0
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT)
         Battleship.listenMouseEvent("click",self.breathlife)
     
@@ -81,6 +82,8 @@ class Battleship(App):
         #selfboats[(self.cx,self.cy)].visible = False
         if (self.cx, self.cy) in enemyboatsalive:
             self.squarehit = self.squarehit + 1
+        nonalcoholicshotstaken = nonalcoholicshotstaken + 1
+        print(nonalcoholicshotstaken)
     
     def step(self):
         if self.squarehit == 9:
