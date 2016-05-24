@@ -15,6 +15,7 @@ oceanself = {}
 enemyBoats = {}
 selfBoats = {} 
 enemyboatsalive = {}
+enemyboatsunk = {}
 length = 5
 height = 10
 width = 10
@@ -80,8 +81,9 @@ class Battleship(App):
         self.cy = int(event.y/celld)
         ocean[(self.cx, self.cy)].visible = False
         selfBoats[(self.cx,self.cy)].visible = False
-        if (self.cx, self.cy) in enemyboatsalive:
+        if (self.cx, self.cy) in enemyboatsalive and (self.cx, self.cy) not in enemyboatsunk:
             self.squarehit = self.squarehit + 1
+            enemyboatsunk[self.cx, self.cy] = "hit"
         self.nonalcoholicshotstaken = self.nonalcoholicshotstaken + 1
     
     def step(self):
