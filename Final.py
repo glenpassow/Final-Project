@@ -39,8 +39,8 @@ for x in range(0, height):
         #screen two set up
         yshift = height*celld + 20
         Sprite(rectangle2, (x*celld, y*celld + yshift))
+        selfBoats[(x,y)] = cell(rectangle3, (x*celld, y*celld + yshift))
         oceanself[(x,y)] = cell(rectangle, (x*celld, y*celld + yshift))
-        #selfBoats[(x,y)] = cell(rectangle3, (x*celld, y*celld + yshift))
 
 for a in range(0, 3):
     randx = randrange(1, 10)
