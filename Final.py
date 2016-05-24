@@ -87,7 +87,6 @@ class Battleship(App):
     
     def step(self):
         if self.squarehit == 9:
-            print("you win")
             for j in range(0, height):
                 for k in range(0, width):
                     ocean[(j,k)].visible = False
