@@ -79,7 +79,7 @@ class Battleship(App):
         self.cx = int(event.x/celld)
         self.cy = int(event.y/celld)
         ocean[(self.cx, self.cy)].visible = False
-        #selfboats[(self.cx,self.cy)].visible = False
+        selfboats[(self.cx,self.cy)].visible = False
         if (self.cx, self.cy) in enemyboatsalive:
             self.squarehit = self.squarehit + 1
         self.nonalcoholicshotstaken = self.nonalcoholicshotstaken + 1
