@@ -68,14 +68,13 @@ while overlapping == False:
             else:
                 randy = randy + 1
         length = length - 1
-    """
     for aa in range(0, height):
         for bb in range(0, width):
             if enemyBoats[(aa,bb)].visible == True:
                 shipsmadevisible =shipsmadevisible + 1
     if shipsmadevisible == 9:
         overlapping = False
-    """           
+         
 
 class Battleship(App):
     
