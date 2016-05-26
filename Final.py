@@ -47,7 +47,7 @@ for x in range(0, height):
 while overlapping == False:
     for aaa in range(0, height):
         for bbb in range(0, width):
-            enemyBoats[(aaa,bbb)].visible == False:
+            enemyBoats[(aaa,bbb)].visible == False
     for a in range(0, 3):
         randx = randrange(1, 10)
         randy = randrange(1, 10)
