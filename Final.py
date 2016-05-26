@@ -20,6 +20,7 @@ length = 5
 height = 10
 width = 10
 overlapping = True
+shipsmadevisible = 0
 
 class cell(Sprite):
     def __init__(self, asset, position):
@@ -66,7 +67,11 @@ while overlapping == False:
         length = length - 1
     for aa in range(0, height):
         for bb in range(0, width):
-            if 
+            if enemyBoats[(aa,bb)].visible == True:
+                shipsmadevisible +=
+    if shipsmadevisible == 9:
+        overlapping = False
+                
 
 class Battleship(App):
     
