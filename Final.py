@@ -45,6 +45,7 @@ for x in range(0, height):
         oceanself[(x,y)] = cell(rectangle, (x*celld, y*celld + yshift))
 
 while overlapping == True:
+    shipsmadevisible = 0
     for aaa in range(0, height):
         for bbb in range(0, width):
             enemyBoats[(aaa,bbb)].visible = False
