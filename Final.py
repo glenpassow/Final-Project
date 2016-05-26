@@ -19,6 +19,7 @@ enemyboatsunk = {}
 length = 5
 height = 10
 width = 10
+overlapping = True
 
 class cell(Sprite):
     def __init__(self, asset, position):
@@ -29,7 +30,6 @@ class enemyships(Sprite):
     def __init__(self, asset, position):
         super().__init__(asset, position)
         self.visible = False
-
 
 for x in range(0, height):
     for y in range(0, width):
@@ -43,26 +43,30 @@ for x in range(0, height):
         selfBoats[(x,y)] = cell(rectangle3, (x*celld, y*celld + yshift))
         oceanself[(x,y)] = cell(rectangle, (x*celld, y*celld + yshift))
 
-for a in range(0, 3):
-    randx = randrange(1, 10)
-    randy = randrange(1, 10)
-    if randx > 5:
-        nsx = -1
-    else:
-        nsx = 1
-    if randy > 5:
-        nsy = -1
-    else:
-        nsy = 1    
-    randxy = randrange(1, 3)
-    for u in range(0, length-1):
-        enemyBoats[(randx+nsx,randy+nsy)].visible = True
-        enemyboatsalive[(randx+nsx,randy+nsy)] = (randx+nsx,randy+nsy)
-        if randxy == 2:
-            randx = randx + 1
+while overlapping == False:
+    for a in range(0, 3):
+        randx = randrange(1, 10)
+        randy = randrange(1, 10)
+        if randx > 5:
+            nsx = -1
         else:
-            randy = randy + 1
-    length = length - 1
+            nsx = 1
+        if randy > 5:
+            nsy = -1
+        else:
+            nsy = 1    
+        randxy = randrange(1, 3)
+        for u in range(0, length-1):
+            enemyBoats[(randx+nsx,randy+nsy)].visible = True
+            enemyboatsalive[(randx+nsx,randy+nsy)] = (randx+nsx,randy+nsy)
+            if randxy == 2:
+                randx = randx + 1
+            else:
+                randy = randy + 1
+        length = length - 1
+    for aa in range(0, height):
+        for bb in range(0, width):
+            if 
 
 class Battleship(App):
     
