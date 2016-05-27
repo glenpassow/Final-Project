@@ -41,8 +41,8 @@ for x in range(0, height):
         #screen two set up
         yshift = height*celld + 20
         Sprite(rectangle2, (x*celld, y*celld + yshift))
-        selfBoats[(x,y)] = cell(rectangle3, (x*celld, y*celld + yshift))
-        oceanself[(x,y)] = cell(rectangle, (x*celld, y*celld + yshift))
+        selfBoats[(x,y+yshift)] = cell(rectangle3, (x*celld, y*celld + yshift))
+        oceanself[(x,y+yshift)] = cell(rectangle, (x*celld, y*celld + yshift))
 
 while overlapping == True:
     shipsmadevisible = 0
@@ -94,7 +94,7 @@ class Battleship(App):
         self.cy = int(event.y/celld)
         ocean[(self.cx, self.cy)].visible = False
         oceanself[(self.cx, self.cy)].visible = False
-        selfBoats[(self.cx,self.cy)].visible = True
+        selfBoats[(self.cx+yshift,self.cy+yshift)].visible = True
         if (self.cx, self.cy) in enemyboatsalive and (self.cx, self.cy) not in enemyboatsunk:
             self.squarehit = self.squarehit + 1
             enemyboatsunk[self.cx, self.cy] = "hit"
