@@ -92,7 +92,8 @@ class Battleship(App):
     def breathlife(self, event):
         self.cx = int(event.x/celld)
         self.cy = int(event.y/celld)
-        ocean[(self.cx, self.cy)].visible = False
+        if (self.cx, self.cy) in ocean:
+            ocean[(self.cx, self.cy)].visible = False
         #oceanself[(self.cx, self.cy)].visible = False
         #selfBoats[(self.cx+yshift,self.cy+yshift)].visible = True
         if (self.cx, self.cy) in enemyboatsalive and (self.cx, self.cy) not in enemyboatsunk:
