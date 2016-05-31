@@ -43,7 +43,7 @@ for x in range(0, height):
         Sprite(rectangle2, (x*celld, y*celld + yshift))
         selfBoats[(x,y+yshift)] = cell(rectangle3, (x*celld, y*celld + yshift))
         oceanself[(x,y+yshift)] = cell(rectangle, (x*celld, y*celld + yshift))
-        print(yshift)
+        
 while overlapping == True:
     shipsmadevisible = 0
     for aaa in range(0, height):
@@ -92,6 +92,8 @@ class Battleship(App):
     def breathlife(self, event):
         self.cx = int(event.x/celld)
         self.cy = int(event.y/celld)
+        print(self.cx)
+        print(self.cy+yshift)
         if (self.cx, self.cy) in ocean:
             ocean[(self.cx, self.cy)].visible = False
         if (self.cx, self.cy) in oceanself:
