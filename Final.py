@@ -21,6 +21,7 @@ height = 10
 width = 10
 overlapping = True
 shipsmadevisible = 0
+setUpDone = False
 
 class cell(Sprite):
     def __init__(self, asset, position):
@@ -92,14 +93,16 @@ class Battleship(App):
     def breathlife(self, event):
         self.cx = int(event.x/celld)
         self.cy = int(event.y/celld)
-        if (self.cx, self.cy) in ocean:
-            ocean[(self.cx, self.cy)].visible = False
-        if (self.cx, self.cy-1) in oceanself:
-            oceanself[(self.cx, self.cy-1)].visible = False
-            selfBoats[(self.cx,self.cy-1)].visible = True
-        if (self.cx, self.cy) in enemyboatsalive and (self.cx, self.cy) not in enemyboatsunk:
-            self.squarehit = self.squarehit + 1
-            enemyboatsunk[self.cx, self.cy] = "hit"
+        if setUpDone == False:
+            if (self.cx, self.cy-1) in oceanself:
+                oceanself[(self.cx, self.cy-1)].visible = False
+                selfBoats[(self.cx,self.cy-1)].visible = True
+            if (self.cx, self.cy) in ocean:
+                ocean[(self.cx, self.cy)].visible = False
+        else:
+            if (self.cx, self.cy) in enemyboatsalive and (self.cx, self.cy) not in enemyboatsunk:
+                self.squarehit = self.squarehit + 1
+                enemyboatsunk[self.cx, self.cy] = "hit"
         self.nonalcoholicshotstaken = self.nonalcoholicshotstaken + 1
     
     def step(self):
