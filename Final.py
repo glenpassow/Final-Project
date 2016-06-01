@@ -14,6 +14,7 @@ ocean = {}
 oceanself = {}
 enemyBoats = {}
 selfBoats = {} 
+selfBoatsalive = 0
 enemyboatsalive = {}
 enemyboatsunk = {}
 length = 5
@@ -97,6 +98,7 @@ class Battleship(App):
             if (self.cx, self.cy-1) in oceanself:
                 oceanself[(self.cx, self.cy-1)].visible = False
                 selfBoats[(self.cx,self.cy-1)].visible = True
+                selfBoatsalive[(self.cx,self.cy-1)] = (self.cx,self.cy-1)
             if (self.cx, self.cy) in ocean:
                 ocean[(self.cx, self.cy)].visible = False
         else:
