@@ -93,7 +93,7 @@ class Battleship(App):
         self.cx = int(event.x/celld)
         self.cy = int(event.y/celld)
         print(self.cx)
-        print(self.cy+yshift)
+        print(self.cy)
         if (self.cx, self.cy) in ocean:
             ocean[(self.cx, self.cy)].visible = False
         if (self.cx, self.cy) in oceanself:
