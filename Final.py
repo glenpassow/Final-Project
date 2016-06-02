@@ -25,7 +25,6 @@ height = 10
 width = 10
 overlapping = True
 shipsmadevisible = 0
-setUpDone = False
 
 class cell(Sprite):
     def __init__(self, asset, position):
@@ -86,7 +85,7 @@ while overlapping == True:
 class Battleship(App):
     
     def __init__(self):
-        #Battleship.listenKeyEvent("keydown", "space", self.spaceclick)
+        Battleship.listenKeyEvent("keydown", "space", self.spaceclick)
         SCREEN_WIDTH = 1000
         SCREEN_HEIGHT = 1000
         self.going = False
@@ -94,11 +93,14 @@ class Battleship(App):
         self.nonalcoholicshotstaken = 0
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT)
         Battleship.listenMouseEvent("click",self.breathlife)
+        
+     def spaceclick(self,event):
+        self.going = True
     
     def breathlife(self, event):
         self.cx = int(event.x/celld)
         self.cy = int(event.y/celld)
-        if setUpDone == False:
+        if self.going == True:
             if (self.cx, self.cy-1) in oceanself:
                 oceanself[(self.cx, self.cy-1)].visible = not oceanself[(self.cx, self.cy-1)].visible
                 selfBoats[(self.cx,self.cy-1)].visible = not selfBoats[(self.cx,self.cy-1)].visible
