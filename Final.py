@@ -103,9 +103,9 @@ class Battleship(App):
                 oceanself[(self.cx, self.cy-1)].visible = not oceanself[(self.cx, self.cy-1)].visible
                 selfBoats[(self.cx,self.cy-1)].visible = not selfBoats[(self.cx,self.cy-1)].visible
                 selfBoatsalive[(self.cx,self.cy-1)] = (self.cx,self.cy-1)
+        else:
             if (self.cx, self.cy) in ocean:
                 ocean[(self.cx, self.cy)].visible = False
-        else:
             if (self.cx, self.cy) in enemyboatsalive and (self.cx, self.cy) not in enemyboatsunk:
                 self.squarehit = self.squarehit + 1
                 enemyboatsunk[self.cx, self.cy] = "hit"
