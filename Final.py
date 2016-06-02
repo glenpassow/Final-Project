@@ -16,7 +16,6 @@ ocean = {}
 oceanself = {}
 enemyBoats = {}
 selfBoats = {} 
-self
 selfBoatsalive = 0
 enemyboatsalive = {}
 enemyboatsunk = {}
