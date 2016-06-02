@@ -4,12 +4,14 @@ black = Color(0x000000, 1.0)
 blue = Color(0x2D9FC2,1.0)
 white = Color(0xFFFFFF, 1.0)
 red = Color(0xFC5D5D,1.0)
+grey = Color(0x858585,1.0)
 thinline = LineStyle(1, black)
 celld = 35
 rectangle3 = RectangleAsset(celld, celld, thinline, red)
 rectangle = RectangleAsset(celld, celld, thinline, blue)
 rectangle2 = RectangleAsset(celld, celld, thinline, white)
 rectangle4 = RectangleAsset(celld, celld, thinline, black)
+rectangle5 = RectangleAsset(celld, celld, thinline, grey)
 ocean = {}
 oceanself = {}
 enemyBoats = {}
@@ -43,7 +45,8 @@ for x in range(0, height):
         #screen two set up
         yshift = height*celld + 20
         Sprite(rectangle2, (x*celld, y*celld + yshift))
-        selfBoats[(x,y+10)] = cell(rectangle3, (x*celld, y*celld + yshift))
+        selfBoats[(x,y+10)] = cell(rectangle5, (x*celld, y*celld + yshift))
+        selfBoatshit[(x,y+10)] = cell(rectangle4, (x*celld, y*celld + yshift))
         oceanself[(x,y+10)] = cell(rectangle, (x*celld, y*celld + yshift))
 
 while overlapping == True:
