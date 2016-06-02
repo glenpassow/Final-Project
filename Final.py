@@ -94,7 +94,7 @@ class Battleship(App):
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT)
         Battleship.listenMouseEvent("click",self.breathlife)
         
-     def spaceclick(self,event):
+    def spaceclick(self,event):
         self.going = True
     
     def breathlife(self, event):
