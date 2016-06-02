@@ -16,9 +16,11 @@ ocean = {}
 oceanself = {}
 enemyBoats = {}
 selfBoats = {} 
+self
 selfBoatsalive = 0
 enemyboatsalive = {}
 enemyboatsunk = {}
+selfBoatssunk = {}
 length = 5
 height = 10
 width = 10
@@ -46,7 +48,7 @@ for x in range(0, height):
         yshift = height*celld + 20
         Sprite(rectangle2, (x*celld, y*celld + yshift))
         selfBoats[(x,y+10)] = cell(rectangle5, (x*celld, y*celld + yshift))
-        selfBoatshit[(x,y+10)] = cell(rectangle4, (x*celld, y*celld + yshift))
+        selfBoatssunk[(x,y+10)] = cell(rectangle4, (x*celld, y*celld + yshift))
         oceanself[(x,y+10)] = cell(rectangle, (x*celld, y*celld + yshift))
 
 while overlapping == True:
