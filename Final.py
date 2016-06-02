@@ -101,7 +101,7 @@ class Battleship(App):
         if setUpDone == False:
             if (self.cx, self.cy-1) in oceanself:
                 oceanself[(self.cx, self.cy-1)].visible = not oceanself[(self.cx, self.cy-1)].visible
-                selfBoats[(self.cx,self.cy-1)].visible = not selfBoats[(self.cx,self.cy-1)].visible = not
+                selfBoats[(self.cx,self.cy-1)].visible = not selfBoats[(self.cx,self.cy-1)].visible
                 selfBoatsalive[(self.cx,self.cy-1)] = (self.cx,self.cy-1)
             if (self.cx, self.cy) in ocean:
                 ocean[(self.cx, self.cy)].visible = False
