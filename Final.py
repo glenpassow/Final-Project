@@ -20,6 +20,7 @@ selfBoatsalive = {}
 enemyboatsalive = {}
 enemyboatsunk = {}
 selfBoatssunk = {}
+cpushots = {}
 length = 5
 height = 10
 width = 10
@@ -125,6 +126,10 @@ class Battleship(App):
         if playerturn == False:
             randshotx = randrange(1, 10)
             randshoty = randrange(1, 10)
+            cpushots[(randshotx, randshoty)] = (randshotx, randshoty)
+            if (randshotx, randshoty) in selfBoats alive:
+                oceanself[(randshotx, randshoty)].visible = not oceanself[(randshotx, randshoty)].visible
+                
             
     
         
