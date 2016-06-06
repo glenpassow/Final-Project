@@ -115,7 +115,7 @@ class Battleship(App):
                     self.squarehit = self.squarehit + 1
                     enemyboatsunk[self.cx, self.cy] = "hit"
             if self.going == True:
-                playerturn = False
+                self.playerturn = False
             self.nonalcoholicshotstaken = self.nonalcoholicshotstaken + 1
     
     def step(self):
@@ -129,7 +129,7 @@ class Battleship(App):
             cpushots[(randshotx, randshoty)] = (randshotx, randshoty)
             if (randshotx, randshoty) in selfBoatsalive:
                 oceanself[(randshotx, randshoty)].visible = not oceanself[(randshotx, randshoty)].visible
-            playerturn = True
+            self.playerturn = True
                 
             
     
