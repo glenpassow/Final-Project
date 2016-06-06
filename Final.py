@@ -26,6 +26,7 @@ height = 10
 width = 10
 overlapping = True
 shipsmadevisible = 0
+shooting = False
 
 class cell(Sprite):
     def __init__(self, asset, position):
@@ -124,8 +125,11 @@ class Battleship(App):
                 for k in range(0, width):
                     ocean[(j,k)].visible = False
         if self.playerturn == False:
-            randshotx = randrange(1, 10)
-            randshoty = randrange(1, 10)
+            while shooting = False:
+                randshotx = randrange(1, 10)
+                randshoty = randrange(1, 10)
+                if (randshotx, randshoty) not in cpushots[(randshotx, randshoty)]:
+                    shooting = True
             cpushots[(randshotx, randshoty)] = (randshotx, randshoty)
             print("shots fired")
             if (randshotx, randshoty) in selfBoatsalive:
