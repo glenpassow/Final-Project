@@ -26,7 +26,6 @@ height = 10
 width = 10
 overlapping = True
 shipsmadevisible = 0
-playerturn = True
 
 class cell(Sprite):
     def __init__(self, asset, position):
@@ -92,6 +91,7 @@ class Battleship(App):
         SCREEN_HEIGHT = 1000
         self.going = False
         self.squarehit = 0
+        self.playerturn = True
         self.nonalcoholicshotstaken = 0
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT)
         Battleship.listenMouseEvent("click",self.breathlife)
@@ -102,7 +102,7 @@ class Battleship(App):
     def breathlife(self, event):
         self.cx = int(event.x/celld)
         self.cy = int(event.y/celld)
-        if playerturn == True:
+        if self.playerturn == True:
             if self.going == False:
                 if (self.cx, self.cy-1) in oceanself:
                     oceanself[(self.cx, self.cy-1)].visible = not oceanself[(self.cx, self.cy-1)].visible
@@ -123,7 +123,7 @@ class Battleship(App):
             for j in range(0, height):
                 for k in range(0, width):
                     ocean[(j,k)].visible = False
-        if playerturn == False:
+        if self.playerturn == False:
             randshotx = randrange(1, 10)
             randshoty = randrange(1, 10)
             cpushots[(randshotx, randshoty)] = (randshotx, randshoty)
