@@ -125,7 +125,7 @@ class Battleship(App):
                 for k in range(0, width):
                     ocean[(j,k)].visible = False
         if self.playerturn == False:
-            while shooting = False:
+            while shooting == False:
                 randshotx = randrange(0, 10)
                 randshoty = randrange(10, 20)
                 if (randshotx, randshoty) not in cpushots:
