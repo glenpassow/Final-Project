@@ -134,7 +134,7 @@ class Battleship(App):
             print("shots fired")
             oceanself[(randshotx, randshoty)].visible = False
             if (randshotx, randshoty) in selfBoatsalive:
-                oceanself[(randshotx, randshoty)].visible = False
+                selfBoats[(randshotx, randshoty)].visible = False
                 print("hit")
             self.playerturn = True
                 
