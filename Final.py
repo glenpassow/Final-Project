@@ -129,6 +129,7 @@ class Battleship(App):
             cpushots[(randshotx, randshoty)] = (randshotx, randshoty)
             if (randshotx, randshoty) in selfBoats alive:
                 oceanself[(randshotx, randshoty)].visible = not oceanself[(randshotx, randshoty)].visible
+            playerturn = True
                 
             
     
