@@ -124,19 +124,20 @@ class Battleship(App):
             for j in range(0, height):
                 for k in range(0, width):
                     ocean[(j,k)].visible = False
-        if self.playerturn == False:
-            #while shooting == False:
-            randshotx = randrange(0, 10)
-            randshoty = randrange(10, 20)
-                #if (randshotx, randshoty) not in cpushots:
-                    #shooting = True
-            cpushots[(randshotx, randshoty)] = (randshotx, randshoty)
-            print("shots fired")
-            oceanself[(randshotx, randshoty)].visible = False
-            if (randshotx, randshoty) in selfBoatsalive:
-                selfBoats[(randshotx, randshoty)].visible = False
-                print("hit")
-            self.playerturn = True
+        if self.going == True:
+            if self.playerturn == False:
+                #while shooting == False:
+                randshotx = randrange(0, 10)
+                randshoty = randrange(10, 20)
+                    #if (randshotx, randshoty) not in cpushots:
+                        #shooting = True
+                cpushots[(randshotx, randshoty)] = (randshotx, randshoty)
+                print("shots fired")
+                oceanself[(randshotx, randshoty)].visible = False
+                if (randshotx, randshoty) in selfBoatsalive:
+                    selfBoats[(randshotx, randshoty)].visible = False
+                    print("hit")
+                self.playerturn = True
                 
             
     
