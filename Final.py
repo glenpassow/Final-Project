@@ -48,7 +48,7 @@ for x in range(0, height):
         yshift = height*celld + 20
         Sprite(rectangle2, (x*celld, y*celld + yshift))
         selfBoats[(x,y+10)] = cell(rectangle5, (x*celld, y*celld + yshift))
-        selfBoatssunk[(x,y+10)] = cell(rectangle4, (x*celld, y*celld + yshift))
+        selfBoatssunk[(x,y+10)] = cell(rectangle3, (x*celld, y*celld + yshift))
         oceanself[(x,y+10)] = cell(rectangle, (x*celld, y*celld + yshift))
 
 while overlapping == True:
@@ -136,6 +136,7 @@ class Battleship(App):
                 oceanself[(randshotx, randshoty)].visible = False
                 if (randshotx, randshoty) in selfBoatsalive:
                     selfBoats[(randshotx, randshoty)].visible = False
+                    selfBoatssunk[(randshotx, randshoty)].visible = True
                     print("hit")
                 self.playerturn = True
                 
